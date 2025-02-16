@@ -6,7 +6,7 @@
   <title>Nigeria Map with CAC Office Tooltips</title>
   <style>
     svg {
-      width: 100%;
+      width: 50%;
       height: auto;
     }
 
@@ -33,6 +33,7 @@
       transform: translateY(0);
     }
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
 </head>
 <body>
   <svg height="450.00000000000006" version="1.1" width="554.1871921182267" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative; left: -0.150024px;" viewBox="0 0 554.1871921182267 450.00000000000006" preserveAspectRatio="xMinYMin">
@@ -653,20 +654,24 @@
   </svg>
 
   <script>
-    const paths = document.querySelectorAll("path");
-    const tooltips = document.querySelectorAll(".tooltip");
+    const map = document.querySelector("svg");
 
-    paths.forEach((path, index) => {
-      path.addEventListener("mousemove", (e) => {
-        const tooltip = tooltips[index];
-        tooltip.style.left = `${e.clientX + 10}px`;
-        tooltip.style.top = `${e.clientY + 10}px`;
-      });
-
-      path.addEventListener("mouseleave", () => {
-        tooltips[index].style.opacity = 0;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          gsap.from("path", {
+            x: -1000,
+            y: -1000,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power2.out",
+          });
+          observer.unobserve(map);
+        }
       });
     });
+
+    observer.observe(map);
   </script>
 </body>
 </html>
