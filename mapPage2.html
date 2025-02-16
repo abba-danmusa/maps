@@ -10,37 +10,40 @@
       height: auto;
     }
 
-    .tooltip {
+    #tooltip {
       position: absolute;
+      width: 150px;
+      height: 150px;
+      opacity: 0;
+      pointer-events: none;
       background: white;
-      padding: 15px;
-      border: 1px solid #ddd;
+      color: #333;
+      padding: 10px 15px;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       font-family: Arial, sans-serif;
       font-size: 14px;
-      color: #333;
-      opacity: 0;
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      transform: translateY(-10px);
-      pointer-events: none;
-      max-width: 200px;
       text-align: center;
+      white-space: nowrap;
+      border: 1px solid #ddd;
+      z-index: 10;
+      transform: translateY(-10px); /* Initial offset for animation */
     }
 
-    path:hover + .tooltip {
-      opacity: 1;
-      transform: translateY(0);
-    }
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
 </head>
 <body>
+
+  <div id="tooltip" class="tooltip">
+    <div class="tooltip-content"></div>
+  </div>
+
   <svg height="450.00000000000006" version="1.1" width="554.1871921182267" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative; left: -0.150024px;" viewBox="0 0 554.1871921182267 450.00000000000006" preserveAspectRatio="xMinYMin">
     <rect x="-2000" y="-1624" width="5000" height="4060" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" transform="matrix(0.5542,0,0,0.5542,0,0)" style="fill-opacity: 0;" stroke-width="1.8044444444444443" fill-opacity="0">
     </rect>
     <!-- Borno State -->
-    <g> 
+    <g class="state-group"> 
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
         fill="#88a4bc" 
@@ -62,7 +65,7 @@
       </foreignObject>
     </g>
     <!-- Delta State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" fill="#88a4bc" 
         stroke="#ffffff"
@@ -77,7 +80,7 @@
       </path>
     </g>
     <!-- Bauchi State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" fill="#88a4bc" 
         stroke="#ffffff"
@@ -91,7 +94,7 @@
       </path>
     </g>
     <!-- Benue State-->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" fill="#88a4bc" 
         stroke="#ffffff"
@@ -107,7 +110,7 @@
       </path>
     </g>
     <!-- Yobe State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" fill="#88a4bc" 
         stroke="#ffffff" 
@@ -123,7 +126,7 @@
       </path>
     </g>
     <!-- Bayelsa State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" fill="#88a4bc" 
         stroke="#ffffff" 
@@ -139,7 +142,7 @@
       </path>
     </g>
     <!-- Niger State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" fill="#88a4bc" 
         stroke="#ffffff"
@@ -155,7 +158,7 @@
       </path>
     </g>
     <!-- FCT -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" fill="#88a4bc" 
         stroke="#ffffff" 
@@ -171,7 +174,7 @@
       </path>
     </g>
     <!-- Nassarawa State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" fill="#88a4bc" 
         stroke="#ffffff"
@@ -187,7 +190,7 @@
       </path>
     </g>
     <!-- Lagos State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" fill="#88a4bc" 
         stroke="#ffffff"
@@ -202,7 +205,7 @@
       </path>
     </g>
     <!-- Jigawa State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" fill="#88a4bc" 
         stroke="#ffffff"
@@ -218,7 +221,7 @@
       </path>
     </g>
     <!-- River State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" fill="#88a4bc" 
         stroke="#ffffff"
@@ -233,7 +236,7 @@
       </path>
     </g>
     <!-- Ekiti State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
@@ -250,7 +253,7 @@
       </path>
     </g>
     <!-- Taraba State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
@@ -266,7 +269,7 @@
       </path>
     </g>
     <!-- Ebonyi State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
@@ -283,7 +286,7 @@
       </path>
     </g>
     <!-- Gombe State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
@@ -300,7 +303,7 @@
       </path>
     </g>
     <!-- Oyo State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" stroke="#ffffff"
@@ -316,7 +319,7 @@
       </path>
     </g>
     <!-- Edo State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
@@ -333,7 +336,7 @@
       </path>
     </g>
     <!-- Enugu State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" fill="#88a4bc" stroke="#ffffff" 
         class="sm_state sm_state_NGEN" 
@@ -348,7 +351,7 @@
       </path>
     </g>
     <!-- Kwara State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
@@ -365,7 +368,7 @@
       </path>
     </g>
     <!-- Adamawa State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
@@ -382,7 +385,7 @@
       </path>
     </g>
     <!-- Plateau State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
@@ -399,7 +402,7 @@
       </path>
     </g>
     <!-- Osun State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
@@ -416,7 +419,7 @@
       </path>
     </g>
     <!-- Zamfara State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
@@ -433,7 +436,7 @@
       </path>
     </g>
     <!-- Abia State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
@@ -450,7 +453,7 @@
       </path>
     </g>
     <!-- Anambra State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
@@ -467,7 +470,7 @@
       </path>
     </g>
     <!-- Cross River State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
@@ -484,7 +487,7 @@
       </path>
     </g>
     <!-- Ogun State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
@@ -501,7 +504,7 @@
       </path>
     </g>
     <!-- Akwa Ibom State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
@@ -518,7 +521,7 @@
       </path>
     </g>
     <!-- Imo State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
@@ -535,7 +538,7 @@
       </path>
     </g>
     <!-- Kaduna State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
@@ -552,7 +555,7 @@
       </path>
     </g>
     <!-- Kebbi State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
@@ -568,7 +571,7 @@
       </path>
     </g>
     <!-- Ondo State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
@@ -585,7 +588,7 @@
       </path>
     </g>
     <!-- Kano State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
@@ -601,7 +604,7 @@
       </path>
     </g>
     <!-- Kogi State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
@@ -618,7 +621,7 @@
       </path>
     </g>
     <!-- Katsina State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
@@ -635,7 +638,7 @@
       </path>
     </g>
     <!-- Sokoto State -->
-    <g>
+    <g class="state-group">
       <path 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
@@ -654,8 +657,30 @@
   </svg>
 
   <script>
-    const map = document.querySelector("svg");
+    // const map = document.querySelector("svg");
 
+    // const observer = new IntersectionObserver((entries) => {
+    //   entries.forEach((entry) => {
+    //     if (entry.isIntersecting) {
+    //       gsap.from("path", {
+    //         x: -1000,
+    //         y: -1000,
+    //         duration: 1,
+    //         stagger: 0.2,
+    //         ease: "power2.out",
+    //       });
+    //       observer.unobserve(map);
+    //     }
+    //   });
+    // });
+
+    // observer.observe(map);
+
+    const map = document.querySelector("svg");
+    const paths = document.querySelectorAll(".state-group path");
+    const tooltip = document.getElementById("tooltip");
+
+    // Initial animation for the map
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -665,6 +690,7 @@
             duration: 1,
             stagger: 0.2,
             ease: "power2.out",
+            onComplete: startAutomatedTooltips, // Start automated tooltips after animation
           });
           observer.unobserve(map);
         }
@@ -672,6 +698,97 @@
     });
 
     observer.observe(map);
+
+    // Function to start automated tooltips
+    function startAutomatedTooltips() {
+      const activeTooltips = []; // Track active tooltips
+      const maxTooltips = 3; // Maximum number of tooltips at a time
+
+      // Function to show a tooltip for a random state
+      function showRandomTooltip() {
+        if (activeTooltips.length >= maxTooltips) return; // Limit to 3 tooltips
+
+        const randomPath = paths[Math.floor(Math.random() * paths.length)]; // Random state
+        const stateName = randomPath.getAttribute("data-state"); // Get state name
+        const tooltipContent = `CAC Office, ${stateName}: 123 ${stateName} Street, ${stateName} State.`; // Tooltip content
+
+        // Position the tooltip near the center of the state
+        const bbox = randomPath.getBBox();
+        const x = bbox.x + bbox.width / 2;
+        const y = bbox.y + bbox.height / 2;
+
+        // Update tooltip content and position
+        tooltip.querySelector(".tooltip-content").textContent = tooltipContent;
+        tooltip.style.left = `${x}px`;
+        tooltip.style.top = `${y}px`;
+
+        // Animate tooltip in
+        gsap.to(tooltip, {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          ease: "power2.out",
+          onStart: () => activeTooltips.push(randomPath), // Add to active tooltips
+        });
+
+        // Animate tooltip out after a delay
+        gsap.to(tooltip, {
+          opacity: 0,
+          y: -10,
+          duration: 0.5,
+          delay: 3, // Show tooltip for 3 seconds
+          ease: "power2.out",
+          onComplete: () => {
+            activeTooltips.shift(); // Remove from active tooltips
+            showRandomTooltip(); // Show another tooltip
+          },
+        });
+      }
+
+      // Start showing tooltips
+      for (let i = 0; i < maxTooltips; i++) {
+        showRandomTooltip();
+      }
+    }
+
+    // Get the tooltip element
+    // const tooltip = document.getElementById("tooltip");
+
+    // Add event listeners to all state paths
+    document.querySelectorAll(".state-group path").forEach((path) => {
+      // Show tooltip on hover
+      path.addEventListener("mouseenter", (event) => {
+        const stateName = path.getAttribute("data-state"); // Get state name from data attribute
+        const tooltipContent = `CAC Office, ${stateName}: 123 ${stateName} Street, ${stateName} State.`; // Tooltip content
+        tooltip.querySelector(".tooltip-content").textContent = tooltipContent; // Update tooltip content
+
+        // Position the tooltip near the cursor
+        const x = event.clientX + 5; // Offset from cursor
+        const y = event.clientY + 5;
+        tooltip.style.left = `${x}px`;
+        tooltip.style.top = `${y}px`;
+
+        // Animate the tooltip with GSAP
+        gsap.to(tooltip, {
+          opacity: 1,
+          y: 0, // Move tooltip to its final position
+          duration: 0.3,
+          ease: "power2.out",
+        });
+      });
+
+      // Hide tooltip on mouse leave
+      path.addEventListener("mouseleave", () => {
+        // Animate the tooltip with GSAP
+        gsap.to(tooltip, {
+          opacity: 0,
+          y: -10, // Move tooltip back to its initial position
+          duration: 0.3,
+          ease: "power2.out",
+        });
+      });
+    });
+  
   </script>
 </body>
 </html>
