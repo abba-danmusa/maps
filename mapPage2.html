@@ -12,22 +12,28 @@
 
     .tooltip {
       position: absolute;
-      width: 150px;
-      height: 150px;
+      max-width: 150px; /* Set a maximum width for the tooltip */
+      width: auto; /* Allow width to adjust based on content */
+      height: auto; /* Allow height to adjust based on content */
       opacity: 0;
       pointer-events: none;
       background: white;
       color: #333;
-      padding: 10px 15px;
+      padding: 5px 10px;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       font-family: Arial, sans-serif;
       font-size: 14px;
       text-align: center;
-      white-space: nowrap;
+      white-space: normal; /* Allow text to wrap */
       border: 1px solid #ddd;
       z-index: 10;
       transform: translateY(-10px); /* Initial offset for animation */
+      overflow: hidden; /* Prevent content from overflowing */
+    }
+
+    .tooltip-content {
+      word-wrap: break-word; /* Break long words if necessary */
     }
 
     #hover-tooltip {
@@ -45,7 +51,9 @@
     </rect>
     <!-- Borno State -->
     <g class="state-group"> 
-      <path 
+      <path
+        data-state="Borno State" 
+        data-address="No.1, NHIS Building, Damboa Road, Maiduguri, Borno State"
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
         fill="#88a4bc" 
         stroke="#ffffff"
@@ -59,15 +67,12 @@
         d="M884.8,264.8L880.4,265.1L869.4,267.6L866.9,267.20000000000005L864.5,266.30000000000007L863.6,265.6000000000001L862.6,265.4000000000001L860,265.80000000000007L859.3,270.20000000000005L859.4,275.40000000000003L858.4,280.8L854.1999999999999,291.2L851.4999999999999,301.4L847.6999999999999,303.59999999999997L842.4999999999999,302.4L838.0999999999999,299.5L833.8999999999999,295.8L828.6999999999998,293.6L822.1999999999998,292.70000000000005L815.9999999999998,294.1L811.8999999999997,298.90000000000003L807.3999999999997,303.00000000000006L804.5999999999998,303.1000000000001L802.6999999999998,304.50000000000006L801.2999999999998,307.30000000000007L799.1999999999998,309.6000000000001L793.7999999999998,312.1000000000001L787.6999999999998,312.7000000000001L782.1999999999998,314.0000000000001L777.7999999999998,317.7000000000001L769.9999999999999,327.9000000000001L760.3999999999999,334.7000000000001L748.0999999999999,334.0000000000001L742.6999999999999,330.60000000000014L737.5999999999999,322.40000000000015L734.8999999999999,320.50000000000017L731.5999999999999,319.20000000000016L728.6999999999999,317.20000000000016L726.3,314.3000000000002L724.8,310.9000000000002L724.9,307.5000000000002L730.5,298.4000000000002L729.6,291.7000000000002L732.5,290.9000000000002L734.9,289.0000000000002L736.6,286.7000000000002L737.5,284.0000000000002L737,277.60000000000025L738,271.40000000000026L742.3,266.60000000000025L760.1999999999999,260.30000000000024L764.9,256.80000000000024L767.1999999999999,251.50000000000023L766.8,245.00000000000023L767.1999999999999,238.40000000000023L768.8,235.90000000000023L770.9,233.70000000000024L774,228.10000000000025L781.7,218.50000000000026L781.3000000000001,215.70000000000024L780.0000000000001,213.00000000000026L777.7000000000002,210.40000000000026L774.7000000000002,209.40000000000026L772.1000000000001,209.80000000000027L770.1000000000001,209.20000000000027L770.5000000000001,206.10000000000028L775.1000000000001,197.00000000000028L775.5000000000001,193.60000000000028L773.7000000000002,185.9000000000003L777.2000000000002,159.8000000000003L775.6000000000001,148.2000000000003L784.0000000000001,140.3000000000003L787.3000000000001,135.6000000000003L789.2,130.90000000000032L788.5,126.10000000000032L784.5,123.10000000000032L781.1,119.30000000000032L779.8000000000001,114.40000000000032L781.5000000000001,99.50000000000031L781.6000000000001,99.40000000000032L783.6000000000001,99.40000000000032L785.4000000000001,99.70000000000032L786.8000000000001,100.20000000000032L788.1,100.50000000000031L789.1,100.00000000000031L789.5,99.1000000000003L790.1,94.9000000000003L790.5,94.6000000000003L792.2,94.30000000000031L792.8000000000001,94.1000000000003L793.4000000000001,93.4000000000003L793.8000000000001,92.6000000000003L794.3000000000001,90.9000000000003L793.0000000000001,90.4000000000003L793.6000000000001,89.30000000000031L794.5000000000001,87.9000000000003L794.8000000000001,86.6000000000003L797.5000000000001,84.00000000000031L797.9000000000001,83.70000000000032L798.2,84.10000000000032L798.7,84.00000000000033L799.2,83.60000000000032L799.7,83.10000000000032L799.9000000000001,82.60000000000032L800.0000000000001,81.30000000000032L800.8000000000001,82.00000000000033L801.4000000000001,82.60000000000032L802.2,83.20000000000032L803.4000000000001,83.40000000000032L804.0000000000001,83.00000000000031L804.5000000000001,81.20000000000032L805.4000000000001,80.80000000000031L807.1000000000001,80.4000000000003L808.4000000000001,79.4000000000003L810.3000000000001,77.0000000000003L810.8000000000001,75.7000000000003L810.9000000000001,75.7000000000003L811.2,75.4000000000003L811.6,75.7000000000003L812,76.3000000000003L812.2,76.5000000000003L813.3000000000001,76.5000000000003L813.2,76.2000000000003L812.8000000000001,75.6000000000003L812.5000000000001,74.7000000000003L812.7000000000002,74.4000000000003L813.7000000000002,74.0000000000003L814.0000000000001,73.8000000000003L814.2000000000002,73.8000000000003L814.9000000000002,73.90000000000029L815.1000000000003,73.8000000000003L815.1000000000003,73.60000000000029L815.0000000000002,73.0000000000003L815.1000000000003,72.8000000000003L817.2000000000003,70.40000000000029L818.2000000000003,69.60000000000029L817.7000000000003,69.0000000000003L817.2000000000003,68.5000000000003L816.7000000000003,68.2000000000003L816.1000000000003,68.0000000000003L816.1000000000003,67.4000000000003L817.2000000000003,67.7000000000003L818.2000000000003,68.2000000000003L818.9000000000003,68.1000000000003L819.2000000000003,66.9000000000003L821.3000000000003,67.30000000000031L823.4000000000003,66.9000000000003L830.2000000000003,63.500000000000306L832.2000000000003,62.8000000000003L834.3000000000003,62.6000000000003L834.3000000000003,63.1000000000003L833.9000000000003,63.9000000000003L834.7000000000003,64.2000000000003L836.1000000000003,64.1000000000003L837.4000000000002,63.70000000000031L837.4000000000002,64.00000000000031L837.4000000000002,64.80000000000031L837.9000000000002,64.20000000000032L838.5000000000002,62.90000000000032L838.9000000000002,62.60000000000032L839.7000000000002,62.800000000000324L839.8000000000002,63.400000000000325L839.7000000000002,64.20000000000033L839.4000000000002,64.80000000000032L841.4000000000002,63.900000000000325L843.5000000000002,63.50000000000033L845.3000000000002,62.800000000000324L846.7000000000002,61.00000000000033L845.6000000000001,60.900000000000325L845.5000000000001,60.50000000000033L846.2000000000002,59.400000000000325L846.5000000000001,59.300000000000324L847.0000000000001,59.300000000000324L847.5000000000001,59.20000000000032L847.7000000000002,58.60000000000032L847.6000000000001,58.20000000000032L847.2000000000002,57.60000000000032L847.3000000000002,57.300000000000324L847.7000000000002,56.50000000000033L848.2000000000002,55.800000000000324L851.2000000000002,52.900000000000325L852.4000000000002,52.10000000000033L852.3000000000002,50.80000000000033L853.0000000000002,50.20000000000033L855.2000000000003,49.90000000000033L855.3000000000003,49.80000000000033L874.0000000000003,50.70000000000033L891.4000000000003,75.00000000000033L908.7000000000003,99.40000000000032L913.0000000000002,120.10000000000032L917.2000000000003,140.80000000000032L917.3000000000003,146.80000000000032L917.4000000000003,147.10000000000034L917.8000000000003,148.40000000000035L917.8000000000003,149.90000000000035L917.4000000000003,152.30000000000035L917.4000000000003,153.20000000000036L918.1000000000004,154.40000000000035L919.1000000000004,155.00000000000034L920.3000000000004,155.20000000000033L935.8000000000004,155.70000000000033L940.7000000000004,156.90000000000032L942.8000000000004,158.0000000000003L943.0000000000005,158.80000000000032L942.6000000000005,159.90000000000032L942.8000000000005,160.70000000000033L943.3000000000005,161.20000000000033L945.5000000000006,162.90000000000032L946.4000000000005,163.30000000000032L946.4000000000005,163.80000000000032L946.1000000000006,164.0000000000003L945.3000000000006,164.40000000000032L946.8000000000006,165.40000000000032L948.4000000000007,166.30000000000032L949.6000000000007,167.30000000000032L950.1000000000007,168.90000000000032L950.5000000000007,169.20000000000033L951.5000000000007,168.90000000000032L952.5000000000007,168.30000000000032L953.2000000000007,168.10000000000034L954.1000000000007,168.50000000000034L954.4000000000007,169.30000000000035L954.5000000000007,170.10000000000036L953.1000000000007,171.60000000000036L952.9000000000007,172.10000000000036L952.5000000000007,172.60000000000036L952.1000000000007,173.50000000000037L950.8000000000008,179.00000000000037L950.9000000000008,179.80000000000038L949.6000000000008,180.7000000000004L949.7000000000008,182.2000000000004L951.2000000000008,185.6000000000004L951.3000000000009,186.4000000000004L951.3000000000009,187.0000000000004L951.0000000000009,189.5000000000004L950.200000000001,192.0000000000004L948.5000000000009,199.9000000000004L948.0000000000009,201.20000000000041L945.200000000001,204.9000000000004L944.800000000001,205.5000000000004L945.000000000001,206.2000000000004L945.600000000001,207.2000000000004L945.900000000001,207.30000000000038L947.200000000001,207.30000000000038L947.800000000001,207.6000000000004L948.1000000000009,208.1000000000004L948.4000000000009,208.7000000000004L948.8000000000009,209.2000000000004L950.0000000000009,210.40000000000038L950.9000000000009,211.7000000000004L951.3000000000009,213.30000000000038L951.3000000000009,215.30000000000038L951.1000000000008,216.90000000000038L950.5000000000008,218.80000000000038L949.7000000000008,220.6000000000004L948.8000000000009,222.1000000000004L947.5000000000009,222.80000000000038L943.6000000000009,224.2000000000004L942.0000000000009,225.2000000000004L939.200000000001,227.7000000000004L937.6000000000009,228.6000000000004L933.1000000000009,230.0000000000004L931.700000000001,230.8000000000004L924.900000000001,237.10000000000042L924.300000000001,237.3000000000004L922.300000000001,237.60000000000042L921.400000000001,238.00000000000043L919.300000000001,240.20000000000041L917.900000000001,241.20000000000041L916.300000000001,242.00000000000043L914.6000000000009,242.40000000000043L913.1000000000009,242.20000000000044L907.800000000001,239.90000000000043L904.800000000001,239.10000000000042L902.400000000001,239.10000000000042L899.500000000001,241.40000000000043L896.7000000000011,244.30000000000044L894.2000000000011,247.50000000000043L892.4000000000011,250.80000000000044L891.1000000000012,253.90000000000043L890.2000000000012,255.10000000000042L887.3000000000012,256.70000000000044L886.1000000000012,257.80000000000047L885.2000000000012,259.1000000000005L884.9000000000012,260.7000000000005L885.4000000000012,263.6000000000005L884.8000000000012,264.80000000000047Z"
       >
       </path>
-      <foreignObject x="884" y="264" width="100" height="50" class="tooltip">
-        <div xmlns="http://www.w3.org/1999/xhtml" class="tooltip-content">
-          CAC Office, Lagos: 123 Lagos Street, Lagos State.
-        </div>
-      </foreignObject>
     </g>
     <!-- Delta State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state="Delta State"
+        data-address="6M3R+MFV, Central Core Area, Asaba 320108, Delta" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" fill="#88a4bc" 
         stroke="#ffffff"
         class="sm_state sm_state_NGDE" 
@@ -82,7 +87,9 @@
     </g>
     <!-- Bauchi State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state="Bauchi State"
+        data-address="11A,Mohammed Bello, Kirfi Road, Bauchi" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" fill="#88a4bc" 
         stroke="#ffffff"
         class="sm_state sm_state_NGBA" 
@@ -96,7 +103,9 @@
     </g>
     <!-- Benue State-->
     <g class="state-group">
-      <path 
+      <path
+        data-state="Benue State"
+        data-address="Plot BNA 5366, Abu King Shuluwa Road, Makurdi" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" fill="#88a4bc" 
         stroke="#ffffff"
         class="sm_state sm_state_NGBE" 
@@ -112,7 +121,9 @@
     </g>
     <!-- Yobe State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state="Yobe State"
+        data-address="Beside Oasis bakery, opposite Phase 1 Secretariat, Maiduguri Road, Damaturu" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" fill="#88a4bc" 
         stroke="#ffffff" 
         class="sm_state sm_state_NGYO" 
@@ -128,7 +139,9 @@
     </g>
     <!-- Bayelsa State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state="Bayelsa State"
+        data-address="444,Chief Melford Okilo Express Way Yenezue-Gene, Yenagoa" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" fill="#88a4bc" 
         stroke="#ffffff" 
         class="sm_state sm_state_NGBY" 
@@ -144,7 +157,9 @@
     </g>
     <!-- Niger State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state="Niger State"
+        data-address="3 Bosso Road, Minna, 920101, Niger" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" fill="#88a4bc" 
         stroke="#ffffff"
         class="sm_state sm_state_NGNI" 
@@ -160,7 +175,9 @@
     </g>
     <!-- FCT -->
     <g class="state-group">
-      <path 
+      <path
+        data-state="FCT"
+        data-address="Plot 420, Tigris Crescent off Aguiyi Ironsi Street, Maitama, Abuja" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" fill="#88a4bc" 
         stroke="#ffffff" 
         class="sm_state sm_state_NGFC" 
@@ -174,9 +191,11 @@
       >
       </path>
     </g>
-    <!-- Nassarawa State -->
+    <!-- Nasarawa State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state="Nasarawa"
+        data-address="Ta’al Model E-Library, Nasarawa State" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" fill="#88a4bc" 
         stroke="#ffffff"
         class="sm_state sm_state_NGNA" 
@@ -192,7 +211,9 @@
     </g>
     <!-- Lagos State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state="Lagos State"
+        data-address="Plot 7 Otunba Jobi Fele Way, behind MKO GARDENS, Alausa, Ikeja 101233, Lagos" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" fill="#88a4bc" 
         stroke="#ffffff"
         class="sm_state sm_state_NGLA" 
@@ -207,7 +228,9 @@
     </g>
     <!-- Jigawa State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state="Jigawa State"
+        data-address="SMEDAN, Dutse" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" fill="#88a4bc" 
         stroke="#ffffff"
         class="sm_state sm_state_NGJI" 
@@ -221,9 +244,11 @@
         >
       </path>
     </g>
-    <!-- River State -->
+    <!-- Rivers State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state="Rivers State"
+        data-address="Plot 30 Danjuma Drive, Rivers, Port Harcourt 500101, Rivers State" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" fill="#88a4bc" 
         stroke="#ffffff"
         class="sm_state sm_state_NGRI" 
@@ -238,7 +263,9 @@
     </g>
     <!-- Ekiti State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state="Ekiti State"
+        data-address="Plot 4, Commercial Block 'c' Extension to GRA Ado Ekiti, Ekiti State" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
         stroke="#ffffff"
@@ -255,7 +282,9 @@
     </g>
     <!-- Taraba State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state="Taraba State"
+        data-address="No.13, Hammaruwa Way, Brothers Filling Station, Adjacent MTN Head Office, Jalingo" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
         stroke="#ffffff"
@@ -271,7 +300,9 @@
     </g>
     <!-- Ebonyi State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state=""
+        data-address="" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
         stroke="#ffffff" 
@@ -288,7 +319,9 @@
     </g>
     <!-- Gombe State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state=""
+        data-address="" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
         stroke="#ffffff"
@@ -305,7 +338,9 @@
     </g>
     <!-- Oyo State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state=""
+        data-address="" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" stroke="#ffffff"
         class="sm_state sm_state_NGOY" 
@@ -321,7 +356,9 @@
     </g>
     <!-- Edo State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state=""
+        data-address="" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
         stroke="#ffffff"
@@ -338,7 +375,9 @@
     </g>
     <!-- Enugu State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state=""
+        data-address="" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" fill="#88a4bc" stroke="#ffffff" 
         class="sm_state sm_state_NGEN" 
         opacity="1" 
@@ -353,7 +392,9 @@
     </g>
     <!-- Kwara State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state=""
+        data-address="" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
         stroke="#ffffff" 
@@ -370,7 +411,9 @@
     </g>
     <!-- Adamawa State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state=""
+        data-address="" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
         stroke="#ffffff" 
@@ -387,7 +430,9 @@
     </g>
     <!-- Plateau State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state=""
+        data-address="" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
         stroke="#ffffff" 
@@ -404,7 +449,9 @@
     </g>
     <!-- Osun State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state=""
+        data-address="" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
         stroke="#ffffff" 
@@ -421,7 +468,9 @@
     </g>
     <!-- Zamfara State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state=""
+        data-address="" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
         stroke="#ffffff" 
@@ -438,7 +487,9 @@
     </g>
     <!-- Abia State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state=""
+        data-address="" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
         stroke="#ffffff" 
@@ -455,7 +506,9 @@
     </g>
     <!-- Anambra State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state=""
+        data-address="" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
         stroke="#ffffff"
@@ -472,7 +525,9 @@
     </g>
     <!-- Cross River State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state=""
+        data-address="" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
         stroke="#ffffff" 
@@ -489,7 +544,9 @@
     </g>
     <!-- Ogun State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state=""
+        data-address="" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
         stroke="#ffffff" 
@@ -506,7 +563,9 @@
     </g>
     <!-- Akwa Ibom State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state=""
+        data-address="" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
         stroke="#ffffff" 
@@ -523,7 +582,9 @@
     </g>
     <!-- Imo State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state=""
+        data-address="" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
         stroke="#ffffff" 
@@ -540,7 +601,9 @@
     </g>
     <!-- Kaduna State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state=""
+        data-address="" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
         stroke="#ffffff" 
@@ -557,7 +620,9 @@
     </g>
     <!-- Kebbi State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state=""
+        data-address="" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
         stroke="#ffffff" 
@@ -573,7 +638,9 @@
     </g>
     <!-- Ondo State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state=""
+        data-address="" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
         stroke="#ffffff" 
@@ -590,7 +657,9 @@
     </g>
     <!-- Kano State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state=""
+        data-address="" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
         stroke="#ffffff" 
@@ -606,7 +675,9 @@
     </g>
     <!-- Kogi State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state=""
+        data-address="" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
         stroke="#ffffff" 
@@ -623,7 +694,9 @@
     </g>
     <!-- Katsina State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state=""
+        data-address="" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
         stroke="#ffffff" 
@@ -640,7 +713,9 @@
     </g>
     <!-- Sokoto State -->
     <g class="state-group">
-      <path 
+      <path
+        data-state=""
+        data-address="" 
         style="opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;" 
         fill="#88a4bc" 
         stroke="#ffffff"
@@ -698,39 +773,27 @@
         );
       }
 
-      // Helper function to adjust tooltip position to avoid overlaps
-      function adjustTooltipPosition(tooltip, activeTooltips) {
+      // Helper function to find a non-overlapping position for a tooltip
+      function findNonOverlappingPosition(tooltip, activeTooltips) {
         const mapRect = map.getBoundingClientRect();
         const tooltipRect = tooltip.getBoundingClientRect();
         const padding = 10; // Minimum space between tooltips
 
-        let adjustedX = parseFloat(tooltip.style.left);
-        let adjustedY = parseFloat(tooltip.style.top);
+        let attempts = 0;
+        let adjustedX, adjustedY;
 
-        // Check for overlaps with existing tooltips
-        for (const activeTooltip of activeTooltips) {
-          if (checkOverlap(tooltip, activeTooltip)) {
-            const activeRect = activeTooltip.getBoundingClientRect();
+        // Try to find a non-overlapping position
+        do {
+          adjustedX = Math.random() * (mapRect.width - tooltipRect.width) + mapRect.left;
+          adjustedY = Math.random() * (mapRect.height - tooltipRect.height) + mapRect.top;
+          tooltip.style.left = `${adjustedX}px`;
+          tooltip.style.top = `${adjustedY}px`;
 
-            // Adjust position to the right of the overlapping tooltip
-            adjustedX = activeRect.right + padding;
+          attempts++;
+          if (attempts > 100) break; // Prevent infinite loops
+        } while (activeTooltips.some(activeTooltip => checkOverlap(tooltip, activeTooltip)));
 
-            // If the new position is outside the map, move it below the overlapping tooltip
-            if (adjustedX + tooltipRect.width > mapRect.right) {
-              adjustedX = parseFloat(tooltip.style.left); // Reset X
-              adjustedY = activeRect.bottom + padding; // Move below
-            }
-
-            // If the new position is still outside the map, reset to original position
-            if (adjustedY + tooltipRect.height > mapRect.bottom) {
-              adjustedX = parseFloat(tooltip.style.left);
-              adjustedY = parseFloat(tooltip.style.top);
-            }
-
-            tooltip.style.left = `${adjustedX}px`;
-            tooltip.style.top = `${adjustedY}px`;
-          }
-        }
+        return { x: adjustedX, y: adjustedY };
       }
 
       // Function to show a tooltip for a random state
@@ -763,7 +826,9 @@
         tooltip.style.top = `${adjustedY}px`;
 
         // Adjust tooltip position to avoid overlaps
-        adjustTooltipPosition(tooltip, activeTooltips);
+        const { x: finalX, y: finalY } = findNonOverlappingPosition(tooltip, activeTooltips);
+        tooltip.style.left = `${finalX}px`;
+        tooltip.style.top = `${finalY}px`;
 
         // Animate tooltip in
         gsap.to(tooltip, {
@@ -800,8 +865,14 @@
       // Show tooltip on hover
       path.addEventListener("mouseenter", (event) => {
         const stateName = path.getAttribute("data-state"); // Get state name
-        const tooltipContent = `CAC Office, ${stateName}: 123 ${stateName} Street, ${stateName} State.`; // Tooltip content
-        hoverTooltip.querySelector(".tooltip-content").textContent = tooltipContent; // Update tooltip content
+        const stateAddress = path.getAttribute("data-address"); // Get state address
+        const tooltipContent = `
+          <h4>${stateName}</h4>
+          <hr/>
+          <p>${stateAddress}</p>
+        `; // Tooltip content
+
+        hoverTooltip.querySelector(".tooltip-content").innerHTML = tooltipContent; // Update tooltip content
 
         // Position the tooltip near the cursor
         const x = event.clientX + 10; // Offset from cursor
