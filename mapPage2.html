@@ -23,7 +23,7 @@
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       font-family: Arial, sans-serif;
-      font-size: 14px;
+      font-size: 10px;
       text-align: center;
       white-space: normal; /* Allow text to wrap */
       border: 1px solid #ddd;
@@ -43,7 +43,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
 </head>
 <body>
-  <div id="hover-tooltip" class="tooltip">
+  <div id="hover-tooltip" class="tooltip" style="z-index: 20;">
     <div class="tooltip-content"></div>
   </div>
   <svg height="450.00000000000006" version="1.1" width="554.1871921182267" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative; left: -0.150024px;" viewBox="0 0 554.1871921182267 450.00000000000006" preserveAspectRatio="xMinYMin">
@@ -802,7 +802,12 @@
 
         const randomPath = paths[Math.floor(Math.random() * paths.length)]; // Random state
         const stateName = randomPath.getAttribute("data-state"); // Get state name
-        const tooltipContent = `CAC Office, ${stateName}: 123 ${stateName} Street, ${stateName} State.`; // Tooltip content
+        const stateAddress = randomPath.getAttribute("data-address") // Get state address
+        const tooltipContent = `
+          <h4>${stateName}</h4>
+          <hr/>
+          <p>${stateAddress}</p>
+        `; // Tooltip content
 
         // Create a new tooltip element
         const tooltip = document.createElement("div");
